@@ -1,3 +1,4 @@
+package Practica02;
 import java.awt.Image;
 import javax.swing.ImageIcon;
 //TODO Transform the code to be used safely in a concurrent context.  
@@ -23,6 +24,7 @@ public class Ball {
 		y = Billiards.Height/2-16;
 		v = 5;
 		fi =  Math.random() * Math.PI * 2;
+		assert y<Board.BOTTOMBOARD && y>Board.TOPBOARD && x<Board.RIGHTBOARD && x>Board.LEFTBOARD: "La bola no debe salirse del tablero";
 	}
 
 	public void move() {
@@ -39,6 +41,7 @@ public class Ball {
 		reflect();
 		
 		//TODO Check postcondition
+		assert y<Board.BOTTOMBOARD && y>Board.TOPBOARD && x<Board.RIGHTBOARD && x>Board.LEFTBOARD: "La bola no debe salirse del tablero";
 	}
 
 	private void reflect() {
@@ -85,4 +88,3 @@ public class Ball {
 	}
 
 }
-
